@@ -1,6 +1,6 @@
 {
-  "name": "node-slack-notify",
-  "version": "0.2.0",
+  "name": "node-slack-appnotify",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
     "test:watch": "ava --watch --verbose",
     "coverage": "nyc --reporter=html --reporter=text ava"
   },
-  "author": "Krisztian Nagy <chrisakakay@gmail.com> (http://chrisakakay.github.io/)",
+  "author": "Arnold Ligtvoet (https://github.com/arnoldligtvoet/node-slack-appnotify)",
   "license": "MIT",
-  "homepage": "https://github.com/chrisakakay/node-slack-notify",
+  "homepage": "https://github.com/arnoldligtvoet/node-slack-appnotify",
   "bugs": {
-    "url": "https://github.com/chrisakakay/node-slack-notify/issues",
-    "email": "chrisakakay@gmail.com"
+    "url": "https://github.com/arnoldligtvoet/node-slack-appnotify/issues",
+    "email": "arnold@ligtvoet.org"
   },
-  "repository": "chrisakakay/node-slack-notify",
+  "repository": "arnoldligtvoet/node-slack-appnotify",
   "files": [
     "index.js"
   ],
