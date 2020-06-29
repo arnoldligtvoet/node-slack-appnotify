@@ -6,8 +6,8 @@ const notify = (args) => {
             reject('ERR: Missing configuration');
             return;
         }
-        if (!args.webhookUrl) {
-            reject('ERR: Missing webhookUrl');
+        if (!args.token) {
+            reject('ERR: Missing token');
             return;
         }
         if (!args.data || !args.data.text) {
