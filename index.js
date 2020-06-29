@@ -1,6 +1,6 @@
 const https = require('https');
 
-const notify = (args) => {
+const appnotify = (args) => {
     return new Promise((resolve, reject) => {
         if (!args) {
             reject('ERR: Missing configuration');
@@ -10,21 +10,25 @@ const notify = (args) => {
             reject('ERR: Missing token');
             return;
         }
+        if (!args.channel) {
+            reject('ERR: Missing channel');
+            return;
+        }
         if (!args.data || !args.data.text) {
             reject('ERR: Missing message');
             return;
         }
 
-        const data = JSON.stringify({ text: args.data.text, attachments: args.data.attachments });
+        const data = JSON.stringify({ channel: args.channel, text: args.data.text, attachments: args.data.attachments });
         
         const options = {
-            hostname: 'slack.com/api/',
+            hostname: 'slack.com',
             port: 443,
-            path: 'chat.postMessage',
+            path: '/api/chat.postMessage',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': args.token
+                'Authorization': 'Bearer ' + args.token
             }
         };
         const req = https.request(options,
@@ -39,5 +43,5 @@ const notify = (args) => {
 }
 
 module.exports = {
-    notify
+    appnotify
 }
