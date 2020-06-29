@@ -15,15 +15,16 @@ const notify = (args) => {
             return;
         }
 
-        const data = JSON.stringify({ text: args.data.text });
+        const data = JSON.stringify({ text: args.data.text, attachments: args.data.attachments });
+        
         const options = {
-            hostname: 'hooks.slack.com',
+            hostname: 'slack.com/api/',
             port: 443,
-            path: args.webhookUrl,
+            path: 'chat.postMessage',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Content-Length': data.length
+                'Authorization': args.token
             }
         };
         const req = https.request(options,
