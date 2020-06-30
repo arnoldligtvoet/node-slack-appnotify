@@ -20,7 +20,7 @@ notify({
   }
 });
 ```
-Configure your app the allow sending of messages: https://api.slack.com/tutorials/message-action
+Configure your app to allow sending of messages: https://api.slack.com/tutorials/message-action (mainly the OAuth scope chat.write, chat.write.public and get your OAuth token)
 
 The `data` property takes the same configuration you find in the docs here: https://api.slack.com/docs/messages
 
